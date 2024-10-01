@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - includeAll:
+      path : liquibase1/1.0
