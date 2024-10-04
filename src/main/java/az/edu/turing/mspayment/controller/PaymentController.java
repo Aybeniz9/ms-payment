@@ -32,6 +32,7 @@ public class PaymentController {
         return paymentService.getAllPayments(page,count,criteria);
     }
 
+
     @GetMapping("/{id}")
     public PaymentResponse getPaymentById(@PathVariable Long id) {
         return paymentService.getPaymentById(id);
