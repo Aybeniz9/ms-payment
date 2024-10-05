@@ -26,12 +26,11 @@ public class PaymentController {
     }
 
     @GetMapping
-    public PageablePaymentResponse getAllPayments(@RequestParam int page,@RequestParam int count, PaymentCriteria criteria) {
+    public PageablePaymentResponse getAllPayments(@RequestParam int page, @RequestParam int count, PaymentCriteria criteria) {
 
-        System.out.println(paymentService.getAllPayments(page,count,criteria));
-        return paymentService.getAllPayments(page,count,criteria);
+        System.out.println(paymentService.getAllPayments(page, count, criteria));
+        return paymentService.getAllPayments(page, count, criteria);
     }
-
 
     @GetMapping("/{id}")
     public PaymentResponse getPaymentById(@PathVariable Long id) {
