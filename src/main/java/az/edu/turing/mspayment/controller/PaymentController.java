@@ -37,14 +37,14 @@ public class PaymentController {
         return paymentService.getPaymentById(id);
     }
 
-    @PutMapping("/edit/{id}")
+    @PutMapping("/{id}")
     public void updatePayment(@PathVariable Long id, @RequestBody PaymentRequest paymentRequest) {
         paymentService.updatePayment(id, paymentRequest);
     }
 
 
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void deletePayment(@PathVariable Long id) {
         paymentService.delete(id);
     }
