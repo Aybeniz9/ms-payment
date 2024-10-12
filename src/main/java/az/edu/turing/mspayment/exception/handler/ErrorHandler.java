@@ -32,23 +32,26 @@ public class ErrorHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ExceptionResponse handleInternalServerError(Exception ex) {
         log.error(ex.getMessage(), ex);
-        return new ExceptionResponse( UNEXPECTED_EXCEPTION_CODE,UNEXPECTED_EXCEPTION_MESSAGE);
+        return new ExceptionResponse(UNEXPECTED_EXCEPTION_CODE, UNEXPECTED_EXCEPTION_MESSAGE);
 
     }
+
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ExceptionResponse handleNotFound(NotFoundException ex) {
         log.error(ex.getMessage(), ex);
         return new ExceptionResponse(ex.getCode(), ex.getMessage());
     }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String,String> handleValidation(MethodArgumentNotValidException exception){
-        Map<String,String> errors= new HashMap<>();
-exception.getBindingResult().getAllErrors().forEach(error->{
-    String fieldName=((FieldError)error).getField();
-    String errorMessage=error.getDefaultMessage();
-    errors.put(fieldName,errorMessage);});
-    return errors;
+    public Map<String, String> handleValidation(MethodArgumentNotValidException exception) {
+        Map<String, String> errors = new HashMap<>();
+        exception.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return errors;
     }
 }
