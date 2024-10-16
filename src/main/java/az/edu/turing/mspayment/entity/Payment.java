@@ -24,5 +24,4 @@ public class Payment {
     String description;
     @CreationTimestamp
     LocalDateTime createdAt;
-
 }

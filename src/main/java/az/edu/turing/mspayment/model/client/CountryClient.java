@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "ms-country",url= "${client.ms-country.endpoint}")
+@FeignClient(name = "ms-country", url = "${client.ms-country.endpoint}")
 public interface CountryClient {
 
     @GetMapping("/api/countries")
-    List< CountryDto> getAvailableCountries(@RequestParam String currency);
+    List<CountryDto> getAvailableCountries(@RequestParam String currency);
 }
