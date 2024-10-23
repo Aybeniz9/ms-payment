@@ -42,7 +42,6 @@ public class PaymentController {
     }
 
 
-
     @DeleteMapping("/{id}")
     public void deletePayment(@PathVariable Long id) {
         paymentService.delete(id);
