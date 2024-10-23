@@ -7,7 +7,7 @@ import az.edu.turing.mspayment.model.criteria.PaymentCriteria;
 import az.edu.turing.mspayment.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
