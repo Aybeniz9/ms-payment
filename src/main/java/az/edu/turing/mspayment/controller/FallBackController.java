@@ -5,7 +5,6 @@ import az.edu.turing.mspayment.model.client.CountryClient;
 import az.edu.turing.mspayment.model.client.CountryDto;
 import lombok.extern.slf4j.Slf4j;
 
-
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -27,6 +26,5 @@ public class FallBackController implements CountryClient {
         }
         var uuid= UUID.randomUUID().toString();
         throw new ExceptionResponseFeign(uuid,"Service unveliable now... Please retry 30 seconds after");
-
     }
 }
