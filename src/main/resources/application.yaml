@@ -30,5 +30,3 @@ resilience4j.circuit-breaker:
       permitted-number-of-calls-in-half-open-state: 2
       sliding-window-size: 4
       sliding-window-type: COUNT_BASED
-
-
